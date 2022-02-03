@@ -1,8 +1,8 @@
 import "./App.css"
-import Layout from "./layouts/layout"
+import Layout from "./layout/Layout"
 
 function App() {
-  return <Layout>Main component</Layout>
+  return <Layout></Layout>
 }
 
 export default App
