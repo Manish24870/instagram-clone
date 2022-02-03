@@ -1,7 +1,8 @@
 import "./App.css"
+import Layout from "./layouts/layout"
 
 function App() {
-  return <div className="App">This is instagram clone.</div>
+  return <Layout>Main component</Layout>
 }
 
 export default App

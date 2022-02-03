@@ -1,0 +1,9 @@
+/* Main layout of the page */
+.layout {
+  padding: 0 50px;
+}
+
+/* Header components */
+.header {
+  background-color: #fff;
+}
