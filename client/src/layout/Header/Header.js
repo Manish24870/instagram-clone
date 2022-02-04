@@ -4,7 +4,7 @@ import { useState } from "react"
 import classes from "./Header.module.css"
 
 // Assets
-import { Logo } from "../../assets/Svg-icons"
+import { Logo, NotificationIcon, UploadIcon } from "../../assets/Svg-icons"
 import { SeachIcon } from "../../assets/Svg-icons"
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <div className={classes.left}>
+      <div className={classes.section}>
         <Logo />
 
         <div className={classes.search}>
@@ -28,7 +28,10 @@ const Header = () => {
           />
         </div>
       </div>
-      <div>Other icons</div>
+      <div className={classes.section + " " + classes.icons}>
+        <UploadIcon />
+        <NotificationIcon />
+      </div>
     </header>
   )
 }

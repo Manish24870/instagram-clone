@@ -14,9 +14,13 @@
   background-color: #fafafa;
 }
 
-.left {
+.section {
   display: flex;
   align-items: center;
+}
+
+.icons > *:first-child {
+  margin-right: 24px;
 }
 
 .search {
