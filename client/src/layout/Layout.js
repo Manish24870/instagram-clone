@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <div className={classes.layout}>
       <Header />
 
-      <section className={classes.content}>
+      <section className={classes["main-section"]}>
         <SideBar />
         <main className={classes.main}>{children}</main>
       </section>
