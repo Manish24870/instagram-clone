@@ -1,9 +1,11 @@
-.nav-item {
+.nav-item a {
   /* background-color: #fafafa; */
+
   border-radius: 25px;
   padding: 12px 30px;
-
   color: #999;
+
+  font-size: 14px;
 }
 
 .nav-item a {
@@ -12,5 +14,17 @@
 }
 
 .nav-item svg {
-  margin-right: 8px;
+  margin-right: 12px;
+}
+
+.active {
+  background-color: #fafafa;
+}
+
+.active p {
+  color: #000;
+}
+
+.active svg path {
+  fill: #000;
 }
