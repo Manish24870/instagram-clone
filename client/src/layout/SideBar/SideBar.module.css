@@ -3,3 +3,13 @@
   padding: 35px 28px;
   border-radius: 25px;
 }
+
+.sidebar nav {
+  margin-bottom: 120px;
+}
+
+.info {
+  padding: 30px;
+
+  font-size: 14px;
+}
