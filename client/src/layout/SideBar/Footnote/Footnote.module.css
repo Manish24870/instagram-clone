@@ -1,0 +1,13 @@
+.footnote {
+  margin-top: 24px;
+
+  font-size: 12px;
+}
+
+.footnote p:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.footnote p:first-child {
+  color: #9a9a9a;
+}
