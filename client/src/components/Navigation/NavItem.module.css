@@ -1,0 +1,16 @@
+.nav-item {
+  /* background-color: #fafafa; */
+  border-radius: 25px;
+  padding: 12px 30px;
+
+  color: #999;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item svg {
+  margin-right: 8px;
+}
