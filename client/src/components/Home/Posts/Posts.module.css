@@ -1,3 +1,16 @@
 .posts {
   background-color: azure;
+
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.post {
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.testbg {
+  background-color: aliceblue;
+  height: 500px;
 }

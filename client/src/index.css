@@ -42,3 +42,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Position fixed situation  */
+body {
+  overflow: hidden;
+}

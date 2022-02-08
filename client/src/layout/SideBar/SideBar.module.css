@@ -2,6 +2,14 @@
   background: #fff;
   padding: 35px 28px;
   border-radius: 25px;
+
+  height: 68vh;
+  overflow: hidden;
+
+  /* position: fixed;
+  display: block;
+
+  width: 300px; */
 }
 
 .sidebar nav {
