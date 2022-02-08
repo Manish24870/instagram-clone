@@ -1,3 +1,5 @@
 .suggestions {
   background-color: beige;
+
+  height: fit-content;
 }

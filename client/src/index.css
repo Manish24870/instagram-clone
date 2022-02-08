@@ -47,3 +47,7 @@ a {
 body {
   overflow: hidden;
 }
+
+*::-webkit-scrollbar {
+  display: none;
+}
