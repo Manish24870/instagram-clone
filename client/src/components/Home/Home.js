@@ -2,8 +2,8 @@
 import classes from "./Home.module.css"
 
 // Components
-import Posts from "./Posts/Posts"
-import Suggestions from "./Suggestions/Suggestions"
+import Posts from "../Posts/Posts"
+import Suggestions from "../Suggestions/Suggestions"
 
 const Home = () => {
   return (

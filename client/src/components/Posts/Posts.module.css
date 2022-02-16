@@ -1,0 +1,7 @@
+.posts {
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.posts > *:not(:last-child) {
+}
