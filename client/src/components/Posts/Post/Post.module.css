@@ -1,0 +1,47 @@
+.post {
+  background-color: #fff;
+
+  border-radius: 25px;
+}
+
+.header {
+  padding: 32px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  margin-right: 16px;
+}
+
+.header p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header i {
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+}
+
+.header i svg {
+  height: 4px;
+}
+
+.image img {
+  width: 100%;
+}

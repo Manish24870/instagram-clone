@@ -7,15 +7,27 @@ import {
   HomeIcon,
   MessageIcon,
   UserProfileIcon,
-} from "../../assets/Svg-icons"
+} from "../../assets/svg/Svg-icons"
 
 const Navigation = () => {
   return (
     <ul className={classes.navigation}>
       <NavItem icon={<HomeIcon />} title="Home" path="/" />
-      <NavItem icon={<MessageIcon />} title="Messages" path="/chat" />
-      <NavItem icon={<ExploreIcon />} title="Explore" path="/explore" />
-      <NavItem icon={<UserProfileIcon />} title="User Profile" path="/user" />
+      <NavItem
+        icon={<MessageIcon />}
+        title="Messages"
+        path="/chat"
+      />
+      <NavItem
+        icon={<ExploreIcon />}
+        title="Explore"
+        path="/explore"
+      />
+      <NavItem
+        icon={<UserProfileIcon />}
+        title="User Profile"
+        path="/user"
+      />
     </ul>
   )
 }

@@ -4,11 +4,16 @@ import { useState } from "react"
 import classes from "./Header.module.css"
 
 // Assets
-import { Logo, NotificationIcon, UploadIcon } from "../../assets/Svg-icons"
-import { SeachIcon } from "../../assets/Svg-icons"
+import {
+  Logo,
+  NotificationIcon,
+  UploadIcon,
+} from "../../assets/svg/Svg-icons"
+import { SeachIcon } from "../../assets/svg/Svg-icons"
 
 const Header = () => {
-  const [isSearchClicked, setIsSearchClicked] = useState(false)
+  const [isSearchClicked, setIsSearchClicked] =
+    useState(false)
 
   console.log(isSearchClicked)
 
@@ -18,7 +23,11 @@ const Header = () => {
         <Logo />
 
         <div className={classes.search}>
-          <i className={isSearchClicked ? classes.hideIcon : ""}>
+          <i
+            className={
+              isSearchClicked ? classes.hideIcon : ""
+            }
+          >
             <SeachIcon />
           </i>
           <input
@@ -28,7 +37,9 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className={classes.section + " " + classes.icons}>
+      <div
+        className={classes.section + " " + classes.icons}
+      >
         <UploadIcon />
         <NotificationIcon />
       </div>

@@ -239,3 +239,36 @@ export const UserProfileIcon = () => (
     />
   </svg>
 )
+
+/*---------------
+Component Icons 
+---------------*/
+
+export const MenuIcon = () => (
+  <svg
+    width="27"
+    height="7"
+    viewBox="0 0 27 7"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="3.73718"
+      cy="3.46295"
+      r="3"
+      fill="#C4C4C4"
+    />
+    <circle
+      cx="13.7372"
+      cy="3.46295"
+      r="3"
+      fill="#C4C4C4"
+    />
+    <circle
+      cx="23.7372"
+      cy="3.46295"
+      r="3"
+      fill="#C4C4C4"
+    />
+  </svg>
+)

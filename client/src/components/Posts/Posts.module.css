@@ -1,7 +1,9 @@
 .posts {
   height: 85vh;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .posts > *:not(:last-child) {
+  margin-bottom: 24px;
 }
