@@ -1,8 +1,5 @@
 import classes from "./Post.module.css"
 
-import userImage from "../../../assets/Images/post-user-profile-1.png"
-import PostImage from "../../../assets/Images/home-post-4.png"
-
 import {
   MenuIcon,
   LikeIcon,
@@ -11,20 +8,20 @@ import {
   BookmarkIcon,
 } from "../../../assets/svg/Svg-icons"
 
-const Post = () => {
+const Post = ({ image, description, profilePic, handle }) => {
   return (
     <div className={classes.post}>
       <div className={classes.header}>
         <div className={classes["user-info"]}>
-          <img src={userImage} alt="user" />
-          <p>morganstanley__</p>
+          <img src={profilePic} alt="user" />
+          <p>{handle}</p>
         </div>
         <i>
           <MenuIcon />
         </i>
       </div>
       <div className={classes.image}>
-        <img src={PostImage} alt="user" />
+        <img src={image} alt="user" />
       </div>
       <div className={classes.desc}>
         <div className={classes.interactions}>
@@ -41,8 +38,8 @@ const Post = () => {
         <p className={classes["like-count"]}>25,666 Likes</p>
 
         <div className={classes["user-desc"]}>
-          <div className={classes["username"]}>morganstanley__</div>
-          <div>newest paint in my nike af1s. say 😍 if you like it.</div>
+          <div className={classes["username"]}>{handle}</div>
+          <div>{description}</div>
         </div>
 
         {/**
