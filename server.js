@@ -4,6 +4,9 @@ const chalk = require("chalk");
 const cors = require("cors");
 require("dotenv").config();
 
+const userRouter = require("./routes/userRoutes");
+const globalErrorHandler = require("./controllers/errorController");
+
 const app = express();
 
 // Middlewares
@@ -21,6 +24,12 @@ mongoose
     console.log(err);
   });
 
-app.listen(process.env.PORT, () => {
+// Mount the routes
+app.use("/api/users", userRouter);
+
+// Global error handler
+app.use(globalErrorHandler);
+
+app.listen(process.env.PORT || 5000, () => {
   console.log(chalk.inverse.blue(`Server started at port ${process.env.PORT}`));
 });
