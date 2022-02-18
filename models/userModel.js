@@ -33,6 +33,22 @@ const userSchema = mongoose.Schema({
     required: true,
     default: "default-profile-pic.png",
   },
+  verification: {
+    verified: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    verificationString: {
+      type: String,
+      required: true,
+    },
+  },
+  refreshTokens: [
+    {
+      type: String,
+    },
+  ],
   createdAt: {
     type: Date,
     required: true,
