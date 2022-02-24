@@ -7,11 +7,22 @@ import Home from "./components/Home/Home"
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route
+        path="/create-post"
+        element={<div>This is create post</div>}
+      ></Route>
+      <Route
+        path="*"
+        element={
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Layout>
+        }
+      ></Route>
+    </Routes>
   )
 }
 

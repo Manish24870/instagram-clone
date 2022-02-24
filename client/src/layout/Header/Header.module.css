@@ -1,3 +1,4 @@
+/* Header */
 .header {
   padding: 24px 50px;
   background-color: #fff;
@@ -9,18 +10,16 @@
   transition: all 0.3s;
 }
 
-.search {
-  margin-left: 88px;
-  background-color: #fafafa;
-}
-
+/* Section */
 .section {
   display: flex;
   align-items: center;
 }
 
-.icons > *:first-child {
-  margin-right: 24px;
+/* Left Side */
+.search {
+  margin-left: 88px;
+  background-color: #fafafa;
 }
 
 .search {
@@ -48,21 +47,6 @@
   transition: all 0.3s;
 }
 
-@keyframes padding {
-  0% {
-    padding-left: 48px;
-  }
-  10% {
-    padding-left: 40px;
-  }
-  15% {
-    padding-left: 32px;
-  }
-  100% {
-    padding-left: 24px;
-  }
-}
-
 .search input:focus {
   animation: padding 1s;
   padding-left: 24px;
@@ -82,6 +66,40 @@
   transform: translateY(-50%);
 }
 
+.hideIcon svg {
+  animation: hideshow 0.4s;
+  opacity: 0;
+}
+
+/* Right Side */
+.icons > *:first-child {
+  margin-right: 24px;
+}
+
+.icons a {
+  display: flex;
+}
+
+.icons svg:hover {
+  fill: #007bff25;
+}
+
+/* Animation */
+@keyframes padding {
+  0% {
+    padding-left: 48px;
+  }
+  10% {
+    padding-left: 40px;
+  }
+  15% {
+    padding-left: 32px;
+  }
+  100% {
+    padding-left: 24px;
+  }
+}
+
 @keyframes hideshow {
   0% {
     opacity: 1;
@@ -95,9 +113,4 @@
   100% {
     opacity: 0;
   }
-}
-
-.hideIcon svg {
-  animation: hideshow 0.4s;
-  opacity: 0;
 }
