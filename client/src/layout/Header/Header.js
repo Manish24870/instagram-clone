@@ -30,7 +30,7 @@ const Header = () => {
         </div>
       </div>
       <div className={classes.section + " " + classes.icons}>
-        <NavLink to="/create-post">
+        <NavLink to="/create-new-post">
           <UploadIcon />
         </NavLink>
         <NotificationIcon />

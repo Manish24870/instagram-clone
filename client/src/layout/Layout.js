@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom"
+
 // Styles
 import classes from "./Layout.module.css"
 
@@ -12,7 +14,7 @@ const Layout = ({ children }) => {
 
       <section className={classes["main-section"]}>
         <SideBar />
-        <main className={classes.main}>{children}</main>
+        <main className={classes.main}>{<Outlet />}</main>
       </section>
     </div>
   )
