@@ -326,3 +326,44 @@ export const SendIcon = () => (
     />
   </svg>
 )
+
+export const CloseIcon = () => (
+  <svg
+    width="31"
+    height="31"
+    viewBox="0 0 31 31"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="Iconly/Curved/Close Square">
+      <g id="Close Square">
+        <path
+          id="Stroke 1"
+          d="M18.5924 12.3906L12.4027 18.5803"
+          stroke="#FF3B2F"
+          stroke-width="1.9375"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Stroke 2"
+          d="M18.5999 18.5906L12.3999 12.3906"
+          stroke="#FF3B2F"
+          stroke-width="1.9375"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          id="Stroke 3"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3.55206 15.4987C3.55206 24.459 6.53969 27.4466 15.5 27.4466C24.4603 27.4466 27.4479 24.459 27.4479 15.4987C27.4479 6.53841 24.4603 3.55078 15.5 3.55078C6.53969 3.55078 3.55206 6.53841 3.55206 15.4987Z"
+          stroke="#FF3B2F"
+          stroke-width="1.9375"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </g>
+  </svg>
+)
