@@ -4,6 +4,7 @@ import Layout from "./layout/Layout"
 
 import { Routes, Route } from "react-router-dom"
 import Home from "./components/Home/Home"
+import CreatePost from "./components/Posts/CreatePost/CreatePost"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Route path="/chat" element={<div>chat</div>} />
       </Route>
 
-      <Route path="/create-new-post" element={<div>New Post</div>} />
+      <Route path="/create-new-post" element={<CreatePost />} />
     </Routes>
   )
 }
