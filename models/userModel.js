@@ -42,6 +42,7 @@ const userSchema = mongoose.Schema({
     verificationString: {
       type: String,
       required: true,
+      select: false,
     },
   },
   refreshTokens: [
@@ -64,6 +65,10 @@ userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, 12);
   next();
 });
+
+// Function to compare passwords
+userSchema.methods.comparePassword = async (inputPassword, dbPassword) =>
+  await bcrypt.compare(inputPassword, dbPassword);
 
 const User = mongoose.model("User", userSchema);
 
