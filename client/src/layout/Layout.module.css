@@ -1,5 +1,7 @@
 .layout {
   color: #000;
+
+  overflow: hidden;
 }
 
 .main-section {

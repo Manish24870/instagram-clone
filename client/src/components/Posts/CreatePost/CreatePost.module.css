@@ -1,22 +1,23 @@
 .create-post {
   padding: 24px 50px;
+  overflow: hidden;
+  height: 90vh;
+
+  background-color: #fff;
 }
 
 .main-content {
   margin-top: 24px;
-  background-color: blanchedalmond;
-
   display: grid;
+  gap: 0 20px;
   grid-template-columns: 1fr 1fr;
 }
 
 .input-area {
-  overflow-x: scroll;
-  background-color: red;
+  height: 85vh;
+  overflow-y: scroll;
+  margin-right: 16px;
 }
 
 .main-content {
-  overflow: scroll;
-  height: 1400px;
-  background-color: red;
 }

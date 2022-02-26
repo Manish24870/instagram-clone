@@ -3,6 +3,8 @@ import { useDropzone } from "react-dropzone"
 
 import classes from "./UploadImage.module.css"
 
+import { DropImageIcon } from "../../../../assets/svg/Svg-icons"
+
 const UploadImage = () => {
   const [files, setFiles] = useState()
 
@@ -21,9 +23,15 @@ const UploadImage = () => {
 
   return (
     <div className={classes["upload-image"]}>
-      <div {...getRootProps()}>
+      <div {...getRootProps()} className={classes["upload-area"]}>
         <input {...getInputProps()} />
-        <div>Upload</div>
+        <div>
+          <DropImageIcon />
+          <h3 className={classes.heading}>Drag and drop your images here</h3>
+          <p className={classes["text"]}>
+            or <span>browse</span> from your computer
+          </p>
+        </div>
       </div>
 
       {files && files.map((file) => <img src={file.preview} alt={file.name} />)}
