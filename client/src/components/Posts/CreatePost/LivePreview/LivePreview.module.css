@@ -1,0 +1,9 @@
+.live-preview {
+  height: 85vh;
+  overflow: scroll;
+}
+
+.live-preview div {
+  height: 80%;
+  width: auto;
+}
