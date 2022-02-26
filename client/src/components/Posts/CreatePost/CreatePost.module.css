@@ -10,6 +10,13 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.main-content div:first-child {
+.input-area {
+  overflow-x: scroll;
+  background-color: red;
+}
+
+.main-content {
   overflow: scroll;
+  height: 1400px;
+  background-color: red;
 }

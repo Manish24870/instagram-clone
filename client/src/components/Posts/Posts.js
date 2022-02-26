@@ -62,6 +62,7 @@ const Posts = () => {
     <div className={classes.posts}>
       {DUMMYPOSTS.map((post) => (
         <Post
+          key={post.user.handle}
           image={post.post.image}
           handle={post.user.handle}
           description={post.post.description}
