@@ -21,7 +21,7 @@ const sendTokens = (res, accessToken, refreshToken) => {
   });
 };
 
-// Route: /api/users/register
+// Route: POST /api/users/register
 // Desc: Register a new user
 // Access: Public
 exports.registerUser = async (req, res, next) => {
@@ -72,7 +72,7 @@ exports.registerUser = async (req, res, next) => {
   }
 };
 
-// Route: /api/users/login
+// Route: POST /api/users/login
 // Desc: Login user
 // Access: Public
 exports.loginUser = async (req, res, next) => {
@@ -122,7 +122,62 @@ exports.loginUser = async (req, res, next) => {
   }
 };
 
-// Route: /api/users/logout
+// Route: GET /api/users/refresh-token
+// Desc: Generate new access token from a refresh token
+// Access: Private
+exports.handleRefreshToken = async (req, res, next) => {
+  const cookies = req.cookies;
+
+  // Check if there is a refreshToken cookie
+  if (!cookies?.refreshToken) {
+    return next(new ApiError("Please login again", 400));
+  }
+
+  const { refreshToken } = cookies;
+
+  try {
+    const decoded = jwt.verify(
+      refreshToken,
+      process.env.JWT_REFRESH_TOKEN_SECRET
+    );
+
+    const foundUser = await User.findById(decoded.userId);
+
+    if (!foundUser) {
+      return next(new ApiError("User not found. Login again.", 404));
+    }
+
+    // Check if this refresh token belongs to the user
+    if (!foundUser.refreshTokens.includes(refreshToken)) {
+      return next(new ApiError("Invaid refresh token."));
+    }
+
+    const accessToken = jwt.sign(
+      { userId: decoded.userId },
+      process.env.JWT_ACCESS_TOKEN_SECRET,
+      { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRY }
+    );
+
+    res.status(200).json({
+      status: "success",
+      message: "New access token generated",
+      data: {
+        accessToken,
+      },
+    });
+  } catch (err) {
+    if (err.name === "JsonWebTokenError") {
+      return next(new ApiError("Invalid refresh token. Login again.", 400));
+    }
+
+    if (err.name === "TokenExpiredError") {
+      return next(new ApiError("Refresh token expired", 403));
+    }
+    next(err);
+  }
+};
+
+// Route: POST /api/users/logout
 // Desc: Logout User
 // Access: Private
 exports.logoutUser = async (req, res, next) => {
@@ -140,9 +195,7 @@ exports.logoutUser = async (req, res, next) => {
       refreshToken,
       process.env.JWT_REFRESH_TOKEN_SECRET
     );
-    const foundUser = await User.findById(decoded.userId).select(
-      "+refreshTokens"
-    );
+    const foundUser = await User.findById(decoded.userId);
 
     if (!foundUser || !foundUser._id.equals(req.user._id)) {
       res.clearCookie("refreshToken", { httpOnly: true });
@@ -150,7 +203,6 @@ exports.logoutUser = async (req, res, next) => {
     }
 
     // Delete the refresh token from DB
-    console.log(foundUser.refreshTokens);
     const refreshTokenIndex = foundUser.refreshTokens.findIndex(
       (el) => el === refreshToken
     );
@@ -175,7 +227,7 @@ exports.logoutUser = async (req, res, next) => {
   }
 };
 
-// Route: /api/users/verify-email/:verificationUrl
+// Route: GET /api/users/verify-email/:verificationUrl
 // Desc: Verify the email registered user
 // Access: Public
 exports.verifyRegisteredUser = async (req, res, next) => {

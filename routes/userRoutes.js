@@ -13,4 +13,6 @@ router.get(
   authController.verifyRegisteredUser
 );
 
+router.get("/refresh-token", authController.handleRefreshToken);
+
 module.exports = router;

@@ -36,6 +36,7 @@ exports.protect = async (req, res, next) => {
     if (err.name === "TokenExpiredError") {
       return next(new ApiError("Token expired", 403));
     }
+    next(err);
   }
 };
 
