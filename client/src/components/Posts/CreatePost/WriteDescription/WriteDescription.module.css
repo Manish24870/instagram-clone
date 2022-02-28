@@ -1,0 +1,57 @@
+.desc {
+  background-color: #fafafa;
+  border-radius: 25px;
+  padding: 32px;
+
+  overflow: hidden;
+}
+
+.desc form textarea {
+  width: 100%;
+  background-color: #fff;
+  padding: 24px 32px;
+  width: 100%;
+  height: 180px;
+
+  font-family: inherit;
+  font-size: 15px;
+  color: #000;
+
+  box-sizing: border-box;
+  border-radius: 25px;
+  resize: none;
+
+  border: none;
+
+  transition: all 0.3s;
+}
+
+.desc form textarea:focus {
+  outline: none;
+  border: 2px solid #2fd159;
+  /* border-bottom: 3px solid#0080ff; */
+}
+
+.desc form textarea::placeholder {
+  color: #a1a1a1;
+}
+
+.caption {
+  position: relative;
+}
+
+.captionLabel {
+  position: absolute;
+
+  left: 24px;
+  bottom: 32px;
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #a1a1a1;
+}
+
+.captionLabel span {
+  font-weight: 600;
+  color: #000;
+}
