@@ -6,6 +6,8 @@ const WriteDescription = () => {
   const [wordCount, setWordCount] = useState(0)
 
   return (
+    // TODO The word counter does not work as intended.
+
     <div className={classes.desc}>
       <form>
         <div className={classes.caption}>
