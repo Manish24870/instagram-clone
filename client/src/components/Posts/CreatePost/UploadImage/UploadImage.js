@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useDropzone } from "react-dropzone"
 
 import classes from "./UploadImage.module.css"
@@ -7,6 +7,7 @@ import { DropImageIcon } from "../../../../assets/svg/Svg-icons"
 
 const UploadImage = () => {
   const [files, setFiles] = useState()
+  const [isDropzoneEnter, setIsDropzoneEnter] = useState(false)
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
@@ -21,8 +22,36 @@ const UploadImage = () => {
     },
   })
 
+  // const dropRef = useRef(null)
+
+  // useEffect(() => {
+  //   dropRef.current.addEventListener("dragenter", (e) => {
+  //     setIsHoveredOverDropzone(true)
+  //     console.log("drag entered")
+  //   })
+
+  //   dropRef.current.addEventListener("dragleave", (e) => {
+  //     console.log("drag left")
+  //     setIsHoveredOverDropzone(false)
+  //   })
+
+  //   // return () => {
+  //   //   dropRef.current.removeEventListener()
+  //   // }
+  // }, [isHoveredOverDropzone])
+
   return (
-    <div className={classes["upload-image"]}>
+    <div
+      className={`${classes["upload-image"]} ${
+        isDropzoneEnter ? classes["over-dropzone"] : ""
+      }`}
+      onDragOver={() => {
+        setIsDropzoneEnter(true)
+      }}
+      onDragLeave={() => {
+        setIsDropzoneEnter(false)
+      }}
+    >
       <div {...getRootProps()} className={classes["upload-area"]}>
         <input {...getInputProps()} />
         <div>

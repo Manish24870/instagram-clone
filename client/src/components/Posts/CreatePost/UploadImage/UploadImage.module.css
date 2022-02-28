@@ -14,6 +14,38 @@
   border: 1px dashed #ececec;
   border-radius: 25px;
   padding: 56px;
+
+  transition: all 0.3s;
+}
+
+.upload-area:hover {
+  border: 2px dashed #5e5be6;
+  /* background-color: #cacaf7; */
+}
+
+.upload-area:hover .text span {
+  color: #5e5be6;
+  /* text-decoration: underline; */
+  /* font-weight: 600; */
+}
+
+.upload-area .text span:before {
+  content: "";
+  height: 2px;
+  width: 0;
+  margin-top: 4px;
+}
+
+.upload-area:hover .text span:before {
+  content: "";
+  height: 2px;
+  width: 20px;
+  display: inline-block;
+  background-color: #5e5be6;
+
+  position: absolute;
+  bottom: 0;
+  transition: all 0.2s;
 }
 
 .upload-area svg {
@@ -33,6 +65,16 @@ h3.heading {
 }
 
 .text span {
-  text-decoration: underline;
-  color: #5e5be6;
+  position: relative;
+  /* text-decoration: underline; */
+  /* color: #5e5be6; */
+
+  /* display: flex;
+  justify-content: space-between;
+  width: 20px; */
+}
+
+.over-dropzone .upload-area {
+  border: 3px dashed rgb(1, 238, 255);
+  transform: scale(0.95, 0.95);
 }
