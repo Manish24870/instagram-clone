@@ -440,3 +440,50 @@ export const DropImageIcon = () => (
     />
   </svg>
 )
+
+export const LocationIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M14.5102 10.9428C14.5102 9.58908 13.391 8.49219 12.0097 8.49219C10.6295 8.49219 9.51022 9.58908 9.51022 10.9428C9.51022 12.2955 10.6295 13.3924 12.0097 13.3924C13.391 13.3924 14.5102 12.2955 14.5102 10.9428Z"
+      stroke="#130F26"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M11.9995 21.0274C9.10148 21.0274 4.5 16.0867 4.5 10.8337C4.5 6.72126 7.8571 3.38672 11.9995 3.38672C16.1419 3.38672 19.5 6.72126 19.5 10.8337C19.5 16.0867 14.8985 21.0274 11.9995 21.0274Z"
+      stroke="#130F26"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+)
+
+export const DownIcon = () => (
+  <svg
+    width="24"
+    height="25"
+    viewBox="0 0 24 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 9.08008C19 9.08008 14.856 15.9403 12 15.9403C9.145 15.9403 5 9.08008 5 9.08008"
+      stroke="#130F26"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+)

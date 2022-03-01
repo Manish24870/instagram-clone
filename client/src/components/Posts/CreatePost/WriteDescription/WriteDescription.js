@@ -3,6 +3,8 @@ import Input from "./Input/Input"
 
 import classes from "./WriteDescription.module.css"
 
+import { DownIcon, LocationIcon } from "../../../../assets/svg/Svg-icons"
+
 const WriteDescription = () => {
   const [wordCount, setWordCount] = useState(0)
 
@@ -23,12 +25,16 @@ const WriteDescription = () => {
           </label>
         </div>
 
-        <Input inputConfig={{ type: "text", placeholder: "Add Location" }} />
+        <Input
+          inputConfig={{ type: "text", placeholder: "Add Location" }}
+          SVG={<LocationIcon />}
+        />
         <Input
           inputConfig={{ type: "text", placeholder: "Accessibility Options" }}
+          svg={<DownIcon />}
         />
 
-        <button className={classes.btn + "" + classes["btn-primary"]}>
+        <button className={classes.btn + " " + classes["btn-primary"]}>
           Post
         </button>
       </form>

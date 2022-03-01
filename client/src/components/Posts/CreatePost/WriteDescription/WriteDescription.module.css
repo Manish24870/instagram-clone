@@ -1,9 +1,15 @@
+textarea:focus {
+  outline: none;
+}
+
 .desc {
   background-color: #fafafa;
   border-radius: 25px;
   padding: 32px;
 
   overflow: hidden;
+
+  margin-bottom: 64px;
 }
 
 .desc form > *:not(:last-child) {
@@ -32,12 +38,12 @@
 
 .desc form textarea:focus {
   outline: none;
-  border: 2px solid #2fd159;
+  border: 2px solid #95caff;
   /* border-bottom: 3px solid#0080ff; */
 }
 
 .desc form textarea::placeholder {
-  color: #a1a1a1;
+  color: #575757;
 }
 
 .caption {
@@ -61,5 +67,22 @@
 }
 
 .btn {
-  padding: 40px 16px;
+  padding: 12px 32px;
+
+  margin-top: 32px;
+
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #ebf5ff;
+  color: #007aff;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #007aff;
+  color: #fff;
 }
