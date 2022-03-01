@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Input from "./Input/Input"
 
 import classes from "./WriteDescription.module.css"
 
@@ -21,6 +22,15 @@ const WriteDescription = () => {
             <span>{wordCount}</span>/200
           </label>
         </div>
+
+        <Input inputConfig={{ type: "text", placeholder: "Add Location" }} />
+        <Input
+          inputConfig={{ type: "text", placeholder: "Accessibility Options" }}
+        />
+
+        <button className={classes.btn + "" + classes["btn-primary"]}>
+          Post
+        </button>
       </form>
     </div>
   )
