@@ -5,14 +5,14 @@ import classes from "./UploadImage.module.css"
 
 import { DropImageIcon } from "../../../../assets/svg/Svg-icons"
 
-const UploadImage = () => {
-  const [files, setFiles] = useState()
+const UploadImage = ({ getFiles }) => {
+  // const [files, setFiles] = useState()
   const [isDropzoneEnter, setIsDropzoneEnter] = useState(false)
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles) => {
-      setFiles(
+      getFiles(
         acceptedFiles.map((file) =>
           Object.assign(file, {
             preview: URL.createObjectURL(file),
@@ -63,7 +63,7 @@ const UploadImage = () => {
         </div>
       </div>
 
-      {files && files.map((file) => <img src={file.preview} alt={file.name} />)}
+      {/* {files && files.map((file) => <img src={file.preview} alt={file.name} />)} */}
     </div>
   )
 }
