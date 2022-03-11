@@ -1,4 +1,6 @@
 .create-post {
+  position: relative;
+
   padding: 24px 50px;
   overflow: hidden;
   height: 100vh;
@@ -17,4 +19,10 @@
   height: 85vh;
   overflow-y: scroll;
   margin-right: 16px;
+}
+
+.crop-image {
+  /* position: relative; */
+  z-index: 5;
+  /* height: 500px; */
 }
