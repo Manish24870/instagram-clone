@@ -16,6 +16,8 @@ export default async function getCroppedImg(imageSrc, pixelCrop) {
     return null
   }
 
+  ctx.drawImage(image, 0, 0)
+
   // croppedAreaPixels values are bounding box relative
   // extract the cropped image using these values
   const data = ctx.getImageData(

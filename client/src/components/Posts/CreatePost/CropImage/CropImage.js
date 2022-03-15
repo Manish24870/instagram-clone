@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 
 import classes from "./CropImage.module.css"
 import Cropper from "react-easy-crop"
@@ -15,13 +15,17 @@ const CropImage = ({ image, getCroppedImage }) => {
     setCroppedAreaPixels(croppedAreaPixels)
   }, [])
 
-  console.log(image)
+  useEffect(() => {
+    if (croppedImage) getCroppedImage(croppedImage)
+  }, [croppedImage, getCroppedImage])
 
   const getImage = useCallback(async () => {
     try {
       const croppedImage = await getCroppedImg(image, croppedAreaPixels)
-      console.log("donee", { croppedImage })
-      getCroppedImage(croppedImage)
+
+      console.log("Crop image", croppedImage)
+
+      setCroppedImage(croppedImage)
     } catch (e) {
       console.error(e)
     }

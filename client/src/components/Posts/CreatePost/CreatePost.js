@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 import classes from "./CreatePost.module.css"
 import TopBar from "./TopBar/TopBar"
@@ -11,18 +11,18 @@ import CropImage from "./CropImage/CropImage"
 const CreatePost = () => {
   const [file, setFile] = useState(null)
 
+  console.log(file)
+
   // Image crop
   const [croppedImage, setCroppedImage] = useState(null)
   const [closeCrop, setCloseCrop] = useState(false)
 
   const fileHandler = (files) => {
-    console.log("createPost", files)
     setFile(files[0])
   }
 
   const getImageHandler = (image) => {
     setCroppedImage(image)
-    // setFile(null)
     setCloseCrop(true)
   }
 
@@ -46,12 +46,12 @@ const CreatePost = () => {
               getCroppedImage={(img) => getImageHandler(img)}
             />
           )}
+          {croppedImage && <img src={croppedImage} alt="cropped" />}
           <WriteDescription />
         </div>
-        <div className={classes["live-preview"]}>
-          <LivePreview />
-          {croppedImage && <img src={croppedImage} />}
-        </div>
+        {/* <div className={classes["live-preview"]}>
+          {croppedImage && <LivePreview image={croppedImage} />}
+        </div> */}
       </div>
     </section>
   )
