@@ -9,11 +9,29 @@ import LivePreview from "./LivePreview/LivePreview"
 import CropImage from "./CropImage/CropImage"
 
 const CreatePost = () => {
-  const [file, setFile] = useState()
+  const [file, setFile] = useState(null)
+
+  // Image crop
+  const [croppedImage, setCroppedImage] = useState(null)
+  const [closeCrop, setCloseCrop] = useState(false)
 
   const fileHandler = (files) => {
     console.log("createPost", files)
     setFile(files[0])
+  }
+
+  const getImageHandler = (image) => {
+    setCroppedImage(image)
+    // setFile(null)
+    setCloseCrop(true)
+  }
+
+  let isCropShown
+
+  if (!file && !croppedImage) {
+    isCropShown = false
+  } else {
+    isCropShown = true
   }
 
   return (
@@ -21,12 +39,18 @@ const CreatePost = () => {
       <TopBar />
       <div className={classes["main-content"]}>
         <div className={classes["input-area"]}>
-          {!file && <UploadImage getFiles={fileHandler} />}
-          {file && <CropImage image={URL.createObjectURL(file)} />}
+          {!isCropShown && <UploadImage getFiles={fileHandler} />}
+          {isCropShown && !closeCrop && (
+            <CropImage
+              image={URL.createObjectURL(file)}
+              getCroppedImage={(img) => getImageHandler(img)}
+            />
+          )}
           <WriteDescription />
         </div>
-        <div>
+        <div className={classes["live-preview"]}>
           <LivePreview />
+          {croppedImage && <img src={croppedImage} />}
         </div>
       </div>
     </section>

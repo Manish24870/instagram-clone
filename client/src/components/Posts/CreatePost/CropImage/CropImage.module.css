@@ -20,5 +20,15 @@
 }
 
 .crop-controls {
-  background-color: bisque;
+  position: absolute;
+  width: 100px;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+}
+
+.testbtn {
+  padding: 32px;
+  background-color: aliceblue;
+  cursor: pointer;
 }
