@@ -46,7 +46,7 @@ const CreatePost = () => {
               getCroppedImage={(img) => getImageHandler(img)}
             />
           )}
-          {croppedImage && <img src={croppedImage} alt="cropped" />}
+          {croppedImage && <img src={croppedImage} alt="cropped"npm  />}
           <WriteDescription />
         </div>
         {/* <div className={classes["live-preview"]}>
