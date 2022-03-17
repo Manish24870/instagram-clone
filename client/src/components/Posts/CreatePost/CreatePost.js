@@ -1,57 +1,44 @@
-import { useCallback, useState } from "react"
+import { useState } from "react"
 
 import classes from "./CreatePost.module.css"
 import TopBar from "./TopBar/TopBar"
 
 import UploadImage from "./UploadImage/UploadImage"
 import WriteDescription from "./WriteDescription/WriteDescription"
-import LivePreview from "./LivePreview/LivePreview"
 import CropImage from "./CropImage/CropImage"
 
 const CreatePost = () => {
+  // Image file --> image is saved as File object
   const [file, setFile] = useState(null)
 
-  console.log(file)
-
-  // Image crop
-  const [croppedImage, setCroppedImage] = useState(null)
-  const [closeCrop, setCloseCrop] = useState(false)
-
+  // Set image state
   const fileHandler = (files) => {
     setFile(files[0])
   }
 
-  const getImageHandler = (image) => {
-    setCroppedImage(image)
-    setCloseCrop(true)
-  }
+  // Check if the image is uploaded yet / image is cropped --> to display the correct component
+  let imageComponent = <UploadImage getFiles={fileHandler} />
 
-  let isCropShown
-
-  if (!file && !croppedImage) {
-    isCropShown = false
-  } else {
-    isCropShown = true
+  if (file) {
+    imageComponent = <CropImage image={URL.createObjectURL(file)} />
   }
 
   return (
     <section className={classes["create-post"]}>
       <TopBar />
       <div className={classes["main-content"]}>
+        {/* Upload Image, Crop Image depending on if image is uploaded or not */}
         <div className={classes["input-area"]}>
-          {!isCropShown && <UploadImage getFiles={fileHandler} />}
-          {isCropShown && !closeCrop && (
-            <CropImage
-              image={URL.createObjectURL(file)}
-              getCroppedImage={(img) => getImageHandler(img)}
-            />
-          )}
-          {croppedImage && <img src={croppedImage} alt="cropped"npm  />}
+          {/* UploadImage / CropImage */}
+          {imageComponent}
+
+          {/* Description, Location form */}
           <WriteDescription />
+
+          {/* Test crop image for now */}
         </div>
-        {/* <div className={classes["live-preview"]}>
-          {croppedImage && <LivePreview image={croppedImage} />}
-        </div> */}
+
+        {/* Live preview */}
       </div>
     </section>
   )
