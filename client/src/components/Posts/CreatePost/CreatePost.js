@@ -7,9 +7,21 @@ import UploadImage from "./UploadImage/UploadImage"
 import WriteDescription from "./WriteDescription/WriteDescription"
 import CropImage from "./CropImage/CropImage"
 
+import Preview from "./Preview/Preview"
+
 const CreatePost = () => {
   // Image file --> image is saved as File object
   const [file, setFile] = useState(null)
+
+  // Cropped area data --> x, y, aspect ratio, zoom level etc
+  const [cropData, setCropData] = useState(null)
+
+  console.log(cropData)
+
+  // Set crop data state after getting the data from the CropImage component
+  const setCropDataHandler = (data) => {
+    setCropData(data)
+  }
 
   // Set image state
   const fileHandler = (files) => {
@@ -20,7 +32,12 @@ const CreatePost = () => {
   let imageComponent = <UploadImage getFiles={fileHandler} />
 
   if (file) {
-    imageComponent = <CropImage image={URL.createObjectURL(file)} />
+    imageComponent = (
+      <CropImage
+        image={URL.createObjectURL(file)}
+        getCropData={setCropDataHandler}
+      />
+    )
   }
 
   return (
@@ -34,11 +51,17 @@ const CreatePost = () => {
 
           {/* Description, Location form */}
           <WriteDescription />
-
-          {/* Test crop image for now */}
         </div>
 
-        {/* Live preview */}
+        {/* Preview of the post */}
+        <div className={classes.preview}>
+          <Preview
+            postImage={
+              // check if the image is uploaded yet
+              file ? URL.createObjectURL(file) : null
+            }
+          />
+        </div>
       </div>
     </section>
   )

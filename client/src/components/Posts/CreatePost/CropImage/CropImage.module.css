@@ -19,16 +19,19 @@
   height: 100%;
 }
 
+/* Testing */
 .crop-controls {
   position: absolute;
   width: 100px;
   bottom: 40px;
-  right: 40px;
+  right: 250px;
   z-index: 100;
 }
 
+/* Test */
 .testbtn {
-  padding: 32px;
+  padding: 16px 24px;
   background-color: aliceblue;
   cursor: pointer;
+  width: 250px;
 }
