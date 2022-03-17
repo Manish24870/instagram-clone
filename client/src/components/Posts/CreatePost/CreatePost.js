@@ -16,8 +16,6 @@ const CreatePost = () => {
   // Cropped area data --> x, y, aspect ratio, zoom level etc
   const [cropData, setCropData] = useState(null)
 
-  console.log(cropData)
-
   // Set crop data state after getting the data from the CropImage component
   const setCropDataHandler = (data) => {
     setCropData(data)
@@ -28,15 +26,37 @@ const CreatePost = () => {
     setFile(files[0])
   }
 
-  // Check if the image is uploaded yet / image is cropped --> to display the correct component
-  let imageComponent = <UploadImage getFiles={fileHandler} />
+  // If user wants to add new image after image is cropped
+  const addNewImageAfterCropHandler = () => {
+    setFile(null)
+    setCropData(null)
+  }
+
+  /**
+   * Check if:
+   *  - image is yet to be uploaded
+   *  - image is already uploaded
+   *  - image is already cropped and new image is to be uploaded
+   */
+  let uploadImageArea = <UploadImage getFiles={fileHandler} />
 
   if (file) {
-    imageComponent = (
+    uploadImageArea = (
       <CropImage
         image={URL.createObjectURL(file)}
         getCropData={setCropDataHandler}
       />
+    )
+  }
+
+  if (cropData) {
+    uploadImageArea = (
+      <p
+        onClick={addNewImageAfterCropHandler}
+        className={classes["add-new-image"]}
+      >
+        Click here to add new image
+      </p>
     )
   }
 
@@ -47,7 +67,7 @@ const CreatePost = () => {
         {/* Upload Image, Crop Image depending on if image is uploaded or not */}
         <div className={classes["input-area"]}>
           {/* UploadImage / CropImage */}
-          {imageComponent}
+          {uploadImageArea}
 
           {/* Description, Location form */}
           <WriteDescription />

@@ -26,3 +26,12 @@
   z-index: 5;
   /* height: 500px; */
 }
+
+/* adding new image after cropped */
+.add-new-image {
+  cursor: pointer;
+  background-color: #fcdede;
+  margin-bottom: 16px;
+  padding: 24px 32px;
+  border-radius: 25px;
+}
