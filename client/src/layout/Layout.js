@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
 
       <section className={classes["main-section"]}>
         <SideBar />
+        {/* Outlet works as "children" prop */}
         <main className={classes.main}>{<Outlet />}</main>
       </section>
     </div>
