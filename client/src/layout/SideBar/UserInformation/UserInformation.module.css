@@ -1,6 +1,13 @@
+/* Container */
 .user-info {
   display: flex;
   align-items: center;
+
+  transition: all 0.3s;
+}
+
+.user-info:hover {
+  transform: scale(1.1);
 }
 
 .user-info p {

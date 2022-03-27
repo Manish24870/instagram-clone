@@ -17,7 +17,7 @@ const CreatePost = () => {
   }
 
   return (
-    <section className={classes["create-post"]}>
+    <main className={classes["create-post"]}>
       <TopBar />
       <div className={classes["main-content"]}>
         <div className={classes["input-area"]}>
@@ -28,7 +28,7 @@ const CreatePost = () => {
           <WriteDescription />
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 

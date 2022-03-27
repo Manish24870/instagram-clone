@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import "./App.css"
 
 import Layout from "./layout/Layout"
@@ -7,6 +5,7 @@ import Layout from "./layout/Layout"
 import { Routes, Route } from "react-router-dom"
 import Home from "./components/Home/Home"
 import CreatePost from "./components/Posts/CreatePost/CreatePost"
+import Register from "./components/Authentication/Register/Register"
 
 function App() {
   return (
@@ -21,8 +20,8 @@ function App() {
       <Route path="/create-new-post" element={<CreatePost />} />
 
       {/* Authentication routes */}
-      <Route path="/login" element={<div>Login</div>} />
-      <Route path="/signup" element={<div>Sign up</div>} />
+      <Route path="/login" element={<Register />} />
+      <Route path="/register" element={<div>Sign up</div>} />
     </Routes>
   )
 }
