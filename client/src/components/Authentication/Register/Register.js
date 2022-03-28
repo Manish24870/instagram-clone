@@ -50,8 +50,20 @@ const Register = () => {
   const errRef = useRef()
 
   // State
-  const [user, setUser] = useState("")
-  const [validName, setValidName] = useState(false)
+  const [userName, setUserName] = useState("")
+  const [validUserName, setValidUserName] = useState(false)
+  const [userNameFocus, setUserNameFocus] = useState(false)
+
+  const [password, setPassword] = useState("")
+  const [validPassword, setValidPassword] = useState(false)
+  const [passwordFocus, setPasswordFocus] = useState(false)
+
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [validConfirmPassword, setValidConfirmPassword] = useState(false)
+  const [confirmPasswordFocus, setConfirmPasswordFocus] = useState(false)
+
+  const [errorMessage, setErrorMessage] = useState("")
+  const [success, setSuccess] = useState(false)
 
   return <div>Register</div>
 }
